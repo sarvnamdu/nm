@@ -1,0 +1,560 @@
+/* ======= Reset and Base Styles ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ======= Header ======= */
+header {
+  background: #000;
+  padding: 10px 0;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+header .container {
+  display: flex;
+  align-items: center; /* Aligns vertically to the center */
+  justify-content: space-between; /* Space between logo and nav links */
+  height: 30px;
+}
+
+.logo {
+   /* Ensure the logo takes available space */
+  display: flex;
+  justify-content: flex-start; /* Align to the left */
+  align-items: center;
+  margin-top: 22px;
+}
+
+.logo img {
+  margin-bottom: 10px;
+  width: 120px; /* Ensure the logo stays within the row */
+  /* Ensure the logo stays within the row and does not break line */
+}
+
+/* Navigation */
+nav.nav-black {
+  background-color: black;
+  width: 100%;
+}
+
+nav.nav-black ul {
+  list-style: none;
+  display: flex; /* Ensures the items are aligned horizontally */
+  justify-content: flex-end; /* Aligns navigation links to the right */
+  align-items: center; /* Centers the nav links vertically */
+  margin: 0;
+  padding: 0 30px;
+  gap: 20px;
+}
+
+nav.nav-black ul li {
+  display: flex;
+}
+
+nav.nav-black ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+nav.nav-black ul li a.home-link {
+  background-color: orange;
+  border-radius: 5px;
+}
+
+nav.nav-black ul li a:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* ======= Hero Section ======= */
+#hero {
+  height: 100vh;
+  background: url('bg.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+#hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e68900;
+}
+
+/* ======= Section General Styles ======= */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+h2.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #2e7d32;
+  position: relative;
+}
+
+h2.section-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: #4CAF50;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ======= Services Section ======= */
+#services {
+  background: #f9f9f9;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px 20px;
+  transition: box-shadow 0.3s;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* ======= Products Section ======= */
+#products {
+  background: #e8f5e9;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;  /* This ensures the button stays at the bottom */
+  justify-content: space-between;  /* This creates space between content and button */
+  height: 100%;  /* Ensures cards have a consistent height */
+  transition: box-shadow 0.3s, transform 0.3s;
+  text-align: center;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 22px;
+  margin: 10px 0;
+  color: #2e7d32;
+}
+
+.product-card .price {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.product-card .btn {
+  background: #4caf50;
+  padding: 12px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: auto;  /* Ensures button stays at the bottom */
+}
+
+.product-card .btn:hover {
+  background: #388e3c;
+}
+/* Footer Styling */
+footer {
+  background: #333;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left, .footer-right {
+  flex: 1;
+  min-width: 200px;
+  max-width: 45%; /* Ensuring both columns have flexible width */
+}
+
+.footer-left h2, .footer-right h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-left p, .footer-right p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+.social-icons i {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #007bff;  /* Icon color */
+}
+.social-icons i:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+//* ======= Responsive Styles for Mobile ======= */
+
+/* Navigation for smaller screens */
+@media (max-width: 768px) {
+  /* Header container for better alignment */
+  header .container {
+    display: flex; /* Add this to enable flex behavior */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+  }
+
+  /* Logo adjustment for mobile */
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .logo svg {
+    width: 140px;
+    height: auto;
+  }
+
+  /* Navigation links */
+  nav.nav-black ul {
+    display: flex; /* Flex must be active */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 10px 0 0;
+    gap: 10px;
+    width: 100%;
+  }
+
+  nav.nav-black ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.nav-black ul li a {
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+
+  nav.nav-black ul li a.home-link {
+    background-color: orange;
+    border-radius: 5px;
+  }
+
+  nav.nav-black ul li a:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  /* Header positioning */
+  header {
+    position: static; /* No sticky effect on mobile */
+    backdrop-filter: none;
+    z-index: auto;
+    width: 100%;
+  }
+}
+
+/* Hero Section for Mobile */
+@media (max-width: 600px) {
+  #hero {
+    height: 60vh;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Adjust text sizes in the hero section for better readability */
+  #hero h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+  }
+
+  #hero p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  /* Adjust button size */
+  .btn {
+    font-size: 14px;
+    margin-bottom: 4px;
+    padding: 10px 20px;
+  }
+
+  /* Center the hero content properly */
+  .hero-content {
+    padding: 20px;
+    width: 100%;
+    max-width: 500px; /* Ensure content stays centered */
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Adjust for products section */
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+
+  .service-card img {
+    height: 150px;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  h2.section-title {
+    font-size: 28px;
+  }
+
+  /* Footer adjustments for mobile */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left, .footer-right {
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ======= Hamburger Styles ======= */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+  }
+
+  nav.nav-black {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav.nav-black.active {
+    display: flex; /* Ensure flex is active */
+    max-height: 500px; /* Enough height for full menu */
+  }
+
+  nav.nav-black ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  nav.nav-black ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.nav-black ul li a {
+    padding: 12px;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Adjusting the scroll offset for mobile navigation */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Adjust this value to the height of your header */
+  }
+
+  /* Adjust header size to prevent overlap */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left, .footer-right {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-left h2, .footer-right h2 {
+    font-size: 18px;
+  }
+
+  .footer-left p, .footer-right p {
+    font-size: 14px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+  }
+
+  .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+}
